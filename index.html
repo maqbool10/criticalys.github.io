@@ -11,6 +11,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap-modal-bs3patch.css" rel="stylesheet">
+    <link href="./css/bootstrap-modal.css" rel="stylesheet">
     <link rel="shortcut icon" href="./img/favicon.png" >
 
     <!-- Add custom CSS here -->
@@ -74,14 +76,14 @@
         <div class="row">
           <div class="col-md-2 col-md-offset-2 text-center">
             <div class="service-item">
-              <i class="service-icon fa fa-thumbs-up"></i>
+              <i href="#pmp-training-modal" data-toggle="modal" class="service-icon fa fa-thumbs-up" style="cursor:pointer"></i>
               <h4>Certified PMP training</h4>
               <p>Our trainer has experience of over 20+ years in Academia, Training and IT Industry across the world. The passion and energy to produce uncommon results.</p>
             </div>
           </div>
           <div class="col-md-2 text-center">
             <div class="service-item">
-              <i class="service-icon fa fa-globe"></i>
+              <i href="#webdev-modal" data-toggle="modal" class="service-icon fa fa-globe" style="cursor:pointer"></i>
               <h4>Web Development</h4>
               <p>Our team can develop world class websites in <a href="http://djangoproject.com">Django</a> and <a href="http://meteor.com">Meteor</a>. We don't take shortcuts. We ensure that the delivered code has good test coverage</p>
             </div>
@@ -233,7 +235,47 @@
     </div>
     -->
     <!-- /Call to Action -->
-
+    <!-- modal training -->
+        <div id="pmp-training-modal" class="modal fade container" tabindex="-1" style="display: none;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">PMP training - our difference</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+            Criticalys might have been born recently but the trainer has over 23 years of experience in the area of training, education, project management and leadership skills. He has trained and mentored hundreds of people in various areas and it has been his passion.
+             <br>
+            With a unique combination of spending half of his career in the academia and the rest in IT Industry across the world, roles, cultures, clients, it gives Maqbool an excellent edge to blend experience from both the worlds to impart effective training
+             <br />
+            Much before Criticalys is born, Maqbool has been serving PMI-PCC as a volunteer trainer and has trained many corporate and public workshop candidates.
+             <br />
+            We are partners with a world leader in training and education, ITpreneurs who is in this field since a long time across the world. It is this powerful combination of a carefully designed material delivered straight from the horse's mouth that we think is a differentiator. Happy Learning!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+            <a href="#contact" data-dismiss="modal" class="btn btn-primary dismiss">Reach Us</a>
+          </div>
+        </div>
+    <!-- /modal training -->
+    <!-- modal webdev -->
+        <div id="webdev-modal" class="modal fade container" tabindex="-1" style="display: none;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Professional web development in Django and Meteor</h4>
+          </div>
+          <div class="modal-body">
+            <h2>Django Framework</h2>
+            Django is the web framework for perfectionists with deadlines. Our team can deliver amazing web apps in Django framework. We love python and we have worked with it long enough to wow you with our delivery capabilities. 
+            <h2>Meteor JS</h2>
+            Meteor is the new kid on the block. It's is great for building real time web applications within a fraction of time that it takes with other tools. Our team has got good developers to make a great app for you using it. 
+          </div>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+            <a href="#contact" data-dismiss="modal" class="btn btn-primary dismiss">Reach Us</a>
+          </div>
+        </div>
+    <!-- /modal webdev -->
     <!-- Map -->
     <div id="contact" class="map">
     <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=17.491623,78.355656&amp;num=1&amp;t=h&amp;ie=UTF8&amp;f=d&amp;daddr=Bhanu+Township&amp;geocode=%3BCffAguD001u_FTLmCgEdkJyrBCk5oYH1aZLLOzEUWKTc5TbRJA&amp;iwloc=lyrftr:h,2652962016375101460,17.491516,78.355587&amp;ll=17.4917,78.356209&amp;spn=0.010233,0.027766&amp;output=embed"></iframe><br
@@ -295,12 +337,19 @@
     <!-- JavaScript -->
     <script src="./js/jquery-1.10.2.js"></script>
     <script src="./js/bootstrap.js"></script>
+    <script src="./js/bootstrap-modal.js"></script>
+    <script src="./js/bootstrap-modalmanager.js"></script>
 
     <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
     <script>
         $("#menu-close").click(function(e) {
             e.preventDefault();
             $("#sidebar-wrapper").toggleClass("active");
+        });
+    </script>
+    <script>
+        $(".modal-footer a.dismiss").click(function(e) {
+            $('.modal').modal('hide'); 
         });
     </script>
     <script>
