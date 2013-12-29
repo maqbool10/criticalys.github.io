@@ -53,11 +53,24 @@
   
     <!-- Intro -->
     <div id="about" class="intro">
-      <div class="container">
+      	<div class="container">
+            <h2 class="text-center">We're here to create exponential value</h2>
+	</div>
+	<ul class="nav nav-tabs" id="myTab">
+	  <li class="active"><a href="#about-us" data-toggle="tab">About Us</a></li>
+	  <li><a href="#leadership" data-toggle="tab">Leadership</a></li>
+	  <li><a href="#giving-back" data-toggle="tab">Giving Back</a></li>
+	</ul>
+	
+	<div class="tab-content">
+	  <div class="tab-pane active" id="about-us">
+            <p class="lead">Criticalys is a startup building awesome software products and providing custom development services in SMS platforms, IVRS and Information Systems. Our team has people from premier colleges like IIT, BITS-Pilani and alumni of Microsoft, GE and Cognizant</p>
+	  </div>
+	  <div class="tab-pane" id="leadership">...</div>
+	  <div class="tab-pane" id="giving-back">...</div>
+	</div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3 text-center">
-            <h2>We're here to create exponential value</h2>
-            <p class="lead">Criticalys is a startup building awesome software products and providing custom development services in SMS platforms, IVRS and Information Systems. Our team has people from premier colleges like IIT, BITS-Pilani and alumni of Microsoft, GE and Cognizant</p>
           </div>
         </div>
       </div>
@@ -387,5 +400,11 @@
           }
         });
       });
+    </script>
+    <script>
+	$('#myTab a').off().click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	});
     </script>
 </body></html>
