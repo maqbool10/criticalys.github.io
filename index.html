@@ -402,12 +402,12 @@
             }
           }
         });
+
+	    $('#myTab a').off().click(function (e) {
+	      e.preventDefault()
+	      $(this).tab('show')
+	    });
       });
-    </script>
-    <script>
-	$('#myTab a').off().click(function (e) {
-	  e.preventDefault()
-	  $(this).tab('show')
-	});
+
     </script>
 </body></html>
